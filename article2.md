@@ -49,3 +49,39 @@ fig 4
 
 The above graph contains no articulation point
 => The graph is Biconnected Graph.
+
+# What Are Biconnected Components
+A maximal biconnected subgraph is a Biconnected component.
+Its really simple if you understand the sentance carefully. Take a biconnected sub-graph of a graph, then keep on adding the neighbouring vertices and edges and take a step back if you find an articulation point. So now you will have a biconnected sub-graph of the given graph with maximum nodes possible such that there are no articulation point.
+
+Note: You might have to read it a couple of times to get the whole idea.
+Note From the defenition you might have understood that any biconnected graph can be a biconnected component, as any graph is a sub-graph of itself.
+
+Lets take an example:
+ 
+ fig 5
+
+Here the given graph has 3 articulation points ie, vertex 2, 3, 5, as the graph splits into various parts if we remove one vertex and the edges incident to it.
+So the following are the biconnected components in the graph. As you might observe if we take two of them togeher they will have atmost 1 vertex in common and that vertex is none other than the articulation point. Take any pair and check. 
+
+fig 6
+
+# 3. How To Build A Biconnected Graph
+**Steps to follow to build a biconnected graph:**
+1. Check whether the given graph is biconnected or not.
+2. If its not biconnected identify all the articulation point.
+3. After obtaining the articulation points, determine the set of edges whose inclusion makes the graph connected in the absence of articulation point.
+
+Now lets look the steps for our graph.
+1. The given grapg G is not a biconnected graph, the articulation points are 2,3 and 5.
+2. To transform G to biconnected graph new edges are included to te articulation point.
+
+* Edges corresponding to the articulation point 2 are (1,5) and (3,8).
+* Edges corresponding to the articulation point 3 are (4,10) and (2,9).
+* Edges corresponding to the articulation point 5 are (6,7).
+So lets add these edges.
+
+fig 7
+
+The edges added are represented as dotted lines.
+After the edition of these lines we can observe that it is a biconnected graph.
