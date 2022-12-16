@@ -21,7 +21,7 @@ These are some of the things which you should know before we get to our main top
 Each points are known as vertex (node) and the line joining it is known as edges.
 In the below graph A,B,C,D and E are known as vertex and the lines joining them are known as edges.</p> 
 
-Fig 1
+![image](https://user-images.githubusercontent.com/72661784/208064275-dfe26567-027a-4540-b9ba-aeef6991febb.png)
 
 <p>These graphs have a lot of applications in a lot of different fields like computer science, physics, chemistry etc.
 There is even a study called graph theory to learn about the relationship between nodes and edges.</p>
@@ -31,13 +31,13 @@ Conected graph: If in a graph there is a path between every pair of distinct ver
 ## 1.2 Articulation Point
 A vertex V in a connected graph G is an articulation point (cut point) if the deletion of vertex V along with all edges incident to V disconnects the graph into two or more non-empty components.<br> 
 Lets demonstrate it with an example:
-Fig 2 shows a connected graph
+Fig 1.2 shows a connected graph
 
-Fig2
+![image](https://user-images.githubusercontent.com/72661784/208064707-c11407c3-e0d1-4dc0-b63b-32bc3336915a.png)
 
 Here we can say vertex 2 is an articulation point, because if we remove the vertex 2 along with the incident edges we can observe that the graph splits into two non-empty component.
 
-fig 3
+![image](https://user-images.githubusercontent.com/72661784/208064790-01d03dc6-b58c-4e07-bf9b-da6575bb567f.png)
 
 After deleting vertex 2 and the incident edges of vertex 2, the given graph is divided into two non-empty components as in the figure above. 
 
@@ -47,12 +47,12 @@ After deleting vertex 2 and the incident edges of vertex 2, the given graph is d
 We can call a graph G a biconnected graph if it contains zero articulation point. 
 Example:
 
-fig 4
+![image](https://user-images.githubusercontent.com/72661784/208065091-1a8c58f4-4b34-4bfd-9ed8-82902d463873.png)
 
 The above graph contains no articulation point
 => The graph is Biconnected Graph.
 
-# What Are Biconnected Components
+# 2. What Are Biconnected Components
 <p>A maximal biconnected subgraph is a Biconnected component.
 Its really simple if you understand the sentance carefully. </p>
 <p>Take a biconnected sub-graph of a graph, then keep on adding the neighbouring vertices and edges and take a step back if you find an articulation point. So now you will have a biconnected sub-graph of the given graph with maximum nodes possible such that there are no articulation point.</p>
@@ -66,12 +66,12 @@ Note From the defenition you might have understood that any biconnected graph ca
 
 Lets take an example:
  
- fig 5
+![image](https://user-images.githubusercontent.com/72661784/208065392-e460eddf-aa8a-40c9-9243-5dfe1fcf630e.png)
 
 Here the given graph has 3 articulation points ie, vertex 2, 3, 5, as the graph splits into various parts if we remove one vertex and the edges incident to it.
 So the following are the biconnected components in the graph. As you might observe if we take two of them togeher they will have atmost 1 vertex in common and that vertex is none other than the articulation point. Take any pair and check. 
 
-fig 6
+![image](https://user-images.githubusercontent.com/72661784/208066065-5b43daea-5c40-4670-8b38-7c6b63bb450c.png)
 
 # 3. How To Build A Biconnected Graph
 **Steps to follow to build a biconnected graph:**
@@ -79,7 +79,7 @@ fig 6
 2. If its not biconnected identify all the articulation point.
 3. After obtaining the articulation points, determine the set of edges whose inclusion makes the graph connected in the absence of articulation point.
 
-Now lets look the steps for our graph.
+Now lets look the steps for our graph (Fig 2).
 1. The given grapg G is not a biconnected graph, the articulation points are 2,3 and 5.
 2. To transform G to biconnected graph new edges are included to te articulation point.
 
@@ -88,12 +88,12 @@ Now lets look the steps for our graph.
 * Edges corresponding to the articulation point 5 are (6,7).
 So lets add these edges.
 
-fig 7
+![image](https://user-images.githubusercontent.com/72661784/208066306-f60a7a3f-b0d5-4151-ac7a-99ba8205a55f.png)
 
 The edges added are represented as dotted lines.
 After the edition of these lines we can observe that it is a biconnected graph.
 
-# Identify Articulation Point In A Graph
+# 4. Identify Articulation Point In A Graph
 An articulation point (or cut vertex) in a graph is a vertex that, when removed, increases the number of connected components in the graph. In other words, an articulation point is a vertex that "separates" the graph into two or more separate parts, and if it is removed, those parts will become disconnected.
 
 One of the simplest algorithms for identifying articulation points in a given graph is to perform a depth-first search (DFS) traversal of the graph and keep track of the following 
@@ -114,7 +114,7 @@ This algorithm has a time complexity of O(V+E), where V is the number of vertice
 
 The algorithm described above will work for any type of graph, including directed and undirected graphs, as well as graphs with self-loops and multiple edges.
 
-# Why These Are Important
+# 5. Why These Are Important
 There are many applications of these in many fields. 
 
 An articulation point (or cut vertex) in a graph is a vertex that, when removed along with all the edges incident to it, increases the number of connected components in the graph. In other words, an articulation point is a vertex that plays a key role in keeping the graph connected.
